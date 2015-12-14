@@ -22,16 +22,7 @@ public class SampleTest extends ScriptBase{
 		abercrombie().advertisement().clickCloseAdd();
 		abercrombie().pageHeader().signinLink();
 		abercrombie().signIn().signIn("marufrahman1349@gmail.com", "m17-0985");
-//		abercrombie().signIn().tabPress();
-<<<<<<< Updated upstream
-		System.out.println(driver.getCurrentUrl());
-		System.out.println(driver.getTitle());
-//		System.out.println(driver.getPageSource());
-=======
-//		System.out.println(driver.getCurrentUrl());
-//		System.out.println(driver.getTitle());
-		
->>>>>>> Stashed changes
+//		
 	}
 	@Test
 	public void tab(){
