@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="AbercrombieTests" verbose="1" parallel="tests" thread-count="5">
+	<parameter name="browser" value="ch"/>
+	<test name="Abercrombie Header">
+		
+		<classes>
+			<class name="com.paxotech.abercrombie.tests.AbercrombieHeaderFunctionality" />
+		</classes>
+	</test>
+	<test name="Abercrombie Footer">
+		
+		<classes>
+			<class name="com.paxotech.abercrombie.tests.AbercrombieFooterFunctionality" />
+		</classes>
+	</test>
+	<!--<test name="SampleTest"> <parameter name="browser" value="ff"></parameter> 
+		<classes> <class name="com.paxotech.abercrombie.tests.SampleTest"/> </classes> 
+		</test> -->
+
+
+</suite>
