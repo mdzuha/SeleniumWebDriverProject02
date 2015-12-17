@@ -9,9 +9,9 @@ import org.openqa.selenium.WebDriver;
  * @author masihur
  *
  */
-public class HomePageModel extends ModelBase{
+public class AbercrombieHomePageModel extends ModelBase{
 
-	public HomePageModel(WebDriver driver) {
+	public AbercrombieHomePageModel(WebDriver driver) {
 		super(driver);
 	}
 

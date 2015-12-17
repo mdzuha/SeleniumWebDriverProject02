@@ -11,13 +11,13 @@ import org.openqa.selenium.WebElement;
  * @author PaxoTech Student
  *
  */
-public class BecomeAMemeberModel extends ModelBase{
+public class AbercrombieBecomeAMemeberModel extends ModelBase{
 	
 	public static void main(String[] arg){
 		
 	}
 
-	public BecomeAMemeberModel(WebDriver driver) {
+	public AbercrombieBecomeAMemeberModel(WebDriver driver) {
 		super(driver);
 	}
 	private WebElement firstName;

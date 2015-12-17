@@ -11,9 +11,9 @@ import org.openqa.selenium.WebElement;
  * @author masihur
  *
  */
-public class SignInPageModel extends ModelBase{
+public class AbercrombieSignInPageModel extends ModelBase{
 
-	public SignInPageModel(WebDriver driver) {
+	public AbercrombieSignInPageModel(WebDriver driver) {
 		super(driver);
 	}
 	private WebElement emailTextBox;

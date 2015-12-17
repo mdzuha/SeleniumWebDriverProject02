@@ -11,9 +11,9 @@ import org.openqa.selenium.WebElement;
  * @author masihur
  *
  */
-public class PageFooterModel extends ModelBase{
+public class AbercrombiePageFooterModel extends ModelBase{
 
-	public PageFooterModel(WebDriver driver) {
+	public AbercrombiePageFooterModel(WebDriver driver) {
 		super(driver);
 	}
 	private WebElement facebookLogo;

@@ -21,6 +21,7 @@ import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.net.URL;
+import java.util.Set;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -34,6 +35,35 @@ public class ControllerBase {
 	
 	public ControllerBase(WebDriver driver){
 		this.driver = driver;
+		
+	}
+	public void windowHandle(){
+		String parentHandle = driver.getWindowHandle(); // get the current window handle
+//		driver.findElement(By.xpath("//*[@id='someXpath']")).click(); // click some link that opens a new window
+		for (String winHandle : driver.getWindowHandles()) {
+		    driver.switchTo().window(winHandle); // switch focus of WebDriver to the next found window handle (that's your newly opened window)
+		    driver.switchTo().window(parentHandle); // switch back to the original window
+		}
+
+		//code to do something on new window
+	}
+	public String switchWindowByTitle(String titleExpected){
+		String titleToMatch = titleExpected.trim().toUpperCase();
+		String currentWindow = driver.getWindowHandle();
+		Set<String> windows = driver.getWindowHandles();
+		for(String item: windows){
+			System.out.println(item.toString());
+			if(item.contentEquals(item)){
+				driver.switchTo().window(item);
+				String titleActual = driver.getTitle().trim().toUpperCase();
+				System.out.println(titleActual);
+				if(titleActual.contains(titleToMatch)){
+					break;
+				}
+				
+			}
+		}
+		return currentWindow;
 	}
 	public void enter(WebElement element){
 		element.sendKeys(Keys.ENTER);

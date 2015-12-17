@@ -5,18 +5,18 @@ package com.paxotech.abercrombie.framework.controller;
 
 import org.openqa.selenium.WebDriver;
 
-import com.paxotech.abercrombie.framework.model.PageFooterModel;
+import com.paxotech.abercrombie.framework.model.AbercrombiePageFooterModel;
 
 /**
  * @author masihur
  *
  */
-public class PageFooterController extends ControllerBase{
+public class AbercrombiePageFooterController extends ControllerBase{
 	
-	private PageFooterModel pageFooter = null;
-	public PageFooterController(WebDriver driver) {
+	private AbercrombiePageFooterModel pageFooter = null;
+	public AbercrombiePageFooterController(WebDriver driver) {
 		super(driver);
-		pageFooter = new PageFooterModel(driver);
+		pageFooter = new AbercrombiePageFooterModel(driver);
 	}
 	public void facebookLink(){
 		this.click(pageFooter.facebookLogo());

@@ -5,19 +5,19 @@ package com.paxotech.abercrombie.framework.controller;
 
 import org.openqa.selenium.WebDriver;
 
-import com.paxotech.abercrombie.framework.model.SignInPageModel;
+import com.paxotech.abercrombie.framework.model.AbercrombieSignInPageModel;
 
 /**
  * @author masihur
  *
  */
-public class SignInPageController extends ControllerBase{
+public class AbercrombieSignInPageController extends ControllerBase{
 	
-	private SignInPageModel signIn;
+	private AbercrombieSignInPageModel signIn;
 
-	public SignInPageController(WebDriver driver) {
+	public AbercrombieSignInPageController(WebDriver driver) {
 		super(driver);
-		signIn = new SignInPageModel(driver);
+		signIn = new AbercrombieSignInPageModel(driver);
 	}
 	public void signIn(String email, String password){
 		this.matrixTyping(email, signIn.emailTextBox());

@@ -46,7 +46,7 @@ import org.testng.annotations.Parameters;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.output.ByteArrayOutputStream;
 import org.apache.log4j.Logger;
-import com.paxotech.abercrombie.framework.controller.Application;
+import com.paxotech.abercrombie.framework.controller.AbercrombieApplication;
 
 
 
@@ -61,7 +61,7 @@ public class ScriptBase {
 	
 	protected WebDriver driver;
 	protected SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd hh.mm.ss");
-	protected Application abercrombie;
+	protected AbercrombieApplication abercrombie;
 	private static Logger log = Logger.getLogger(ScriptBase.class.getName());
 	
 	private ScreenRecorder screenRecorder;
@@ -177,9 +177,9 @@ public class ScriptBase {
 	
 	/*----------------------------------------------*/
 	
-	public Application abercrombie(){
+	public AbercrombieApplication abercrombie(){
 		if(abercrombie == null){
-			abercrombie = new Application(driver);
+			abercrombie = new AbercrombieApplication(driver);
 		}
 		return abercrombie;
 	}

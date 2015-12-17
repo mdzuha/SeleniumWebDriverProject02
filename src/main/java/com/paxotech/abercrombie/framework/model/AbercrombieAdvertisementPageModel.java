@@ -13,9 +13,9 @@ import org.openqa.selenium.WebElement;
  * @author masihur
  *
  */
-public class AdvertisementPageModel extends ModelBase{
+public class AbercrombieAdvertisementPageModel extends ModelBase{
 
-	public AdvertisementPageModel(WebDriver driver) {
+	public AbercrombieAdvertisementPageModel(WebDriver driver) {
 		super(driver);
 	}
 	private WebElement closeAdd;

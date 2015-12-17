@@ -6,19 +6,19 @@ package com.paxotech.abercrombie.framework.controller;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
-import com.paxotech.abercrombie.framework.model.BecomeAMemeberModel;
+import com.paxotech.abercrombie.framework.model.AbercrombieBecomeAMemeberModel;
 
 /**
  * @author PaxoTech Student
  *
  */
-public class BecomeAMemeberController extends ControllerBase{
+public class AbercrombieBecomeAMemeberController extends ControllerBase{
 	
-	private BecomeAMemeberModel becomeAMemeber;
+	private AbercrombieBecomeAMemeberModel becomeAMemeber;
 	
-	public BecomeAMemeberController(WebDriver driver) {
+	public AbercrombieBecomeAMemeberController(WebDriver driver) {
 		super(driver);
-		becomeAMemeber = new BecomeAMemeberModel(driver);
+		becomeAMemeber = new AbercrombieBecomeAMemeberModel(driver);
 	}
 	public void becomeAMember(String fName, String lName, long phnNo, String email, String password, String ConfirmPassword){
 		this.matrixTyping(fName, becomeAMemeber.firstName());

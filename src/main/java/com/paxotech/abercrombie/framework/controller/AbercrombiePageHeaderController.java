@@ -14,20 +14,20 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import com.paxotech.abercrombie.framework.model.PageHeaderModel;
+import com.paxotech.abercrombie.framework.model.AbercrombiePageHeaderModel;
 
 /**
  * @author masihur
  *
  */
 
-public class PageHeaderController extends ControllerBase {
+public class AbercrombiePageHeaderController extends ControllerBase {
 
-	private PageHeaderModel pageHeader = null;
+	private AbercrombiePageHeaderModel pageHeader = null;
 
-	public PageHeaderController(WebDriver driver) {
+	public AbercrombiePageHeaderController(WebDriver driver) {
 		super(driver);
-		pageHeader = new PageHeaderModel(driver);
+		pageHeader = new AbercrombiePageHeaderModel(driver);
 	}
 
 	public void logoLink() {

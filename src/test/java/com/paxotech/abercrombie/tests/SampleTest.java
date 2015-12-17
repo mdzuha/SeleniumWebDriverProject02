@@ -22,7 +22,11 @@ public class SampleTest extends ScriptBase{
 		abercrombie().advertisement().clickCloseAdd();
 		abercrombie().pageHeader().signinLink();
 		abercrombie().signIn().signIn("marufrahman1349@gmail.com", "m17-0985");
-//		
+
+		abercrombie().signIn().tabPress();
+
+
+
 	}
 	@Test
 	public void tab(){
@@ -34,7 +38,9 @@ public class SampleTest extends ScriptBase{
 	public void tab2(){
 		abercrombie().advertisement().clickCloseAdd();
 		abercrombie().pageHeader().becomeAMemberLink();
-		abercrombie().becomeAMember().phoneNoTooltipHover();
+		abercrombie().becomeAMember().facebook();
+		abercrombie().becomeAMember().switchWindowByTitle("Facebook");
+		abercrombie().facebookOption().signInWithFacebook("marufrahman1349@gmail.com", "m17-0985");
 	}
 	
 

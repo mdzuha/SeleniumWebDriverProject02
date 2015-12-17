@@ -19,9 +19,9 @@ import org.openqa.selenium.WebElement;
  *
  */
 
-public class PageHeaderModel extends ModelBase{
+public class AbercrombiePageHeaderModel extends ModelBase{
 
-	public PageHeaderModel(WebDriver driver) {
+	public AbercrombiePageHeaderModel(WebDriver driver) {
 		super(driver);
 	}
 	private WebElement logo;
