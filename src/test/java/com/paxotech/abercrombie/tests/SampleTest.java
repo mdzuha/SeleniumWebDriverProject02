@@ -38,9 +38,10 @@ public class SampleTest extends ScriptBase{
 	public void tab2(){
 		abercrombie().advertisement().clickCloseAdd();
 		abercrombie().pageHeader().becomeAMemberLink();
-		abercrombie().becomeAMember().facebook();
-		abercrombie().becomeAMember().switchWindowByTitle("Facebook");
+		abercrombie().signIn().clickFacebookFromSignInPage();
+		abercrombie().facebookOption().moveToFacebookPage();
 		abercrombie().facebookOption().signInWithFacebook("marufrahman1349@gmail.com", "m17-0985");
+		abercrombie().facebookOption().clickCheckBox();
 	}
 	
 

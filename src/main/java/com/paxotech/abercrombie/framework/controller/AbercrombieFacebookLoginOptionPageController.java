@@ -23,13 +23,14 @@ public class AbercrombieFacebookLoginOptionPageController extends ControllerBase
 		this.matrixTyping(email, facebookLoginOption.emailTextBox());
 		this.matrixTyping(password, facebookLoginOption.passwordTextBox());
 	}
-	public void checkCheckBox(){
-		if(facebookLoginOption.checkBox().getAttribute("checked").equals("false")){
-			this.click(facebookLoginOption.checkBox());
-		}
+	public void clickCheckBox(){
+		this.checkCheckBox(facebookLoginOption.checkBox());
 	}
 	public void moveToFacebookPage(){
 		this.switchWindowByTitle("Facebook");
+	}
+	public void pressTab(){
+		this.tabSwitch("TEXT", "TESTTEXT", facebookLoginOption.emailTextBox(), facebookLoginOption.passwordTextBox());
 	}
 
 }

@@ -30,7 +30,7 @@ public class AbercrombieSignInPageFunctionality extends ScriptBase{
 	public void facebookLinkFunctionality(){
 		abercrombie().advertisement().clickCloseAdd();
 		abercrombie().pageHeader().signinLink();
-		abercrombie().signIn().clickFacebook();
+		abercrombie().signIn().clickFacebookFromSignInPage();
 	}
 	
 }

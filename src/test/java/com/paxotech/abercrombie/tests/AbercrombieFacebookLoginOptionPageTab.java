@@ -8,15 +8,18 @@ import org.testng.annotations.Test;
 import com.paxotech.abercrombie.framework.scripts.ScriptBase;
 
 /**
- * @author masihur
+ * @author Masihur
  *
  */
-public class AbercrombieSignInPageTabFunctionality extends ScriptBase{
+public class AbercrombieFacebookLoginOptionPageTab extends ScriptBase{
 	
 	@Test(groups = {"uitestcase"})
-	public void signInTabFunctionality(){
+	public void tabFunctionality(){
 		abercrombie().advertisement().clickCloseAdd();
 		abercrombie().pageHeader().signinLink();
-		abercrombie().signIn().tabPress();
+		abercrombie().signIn().clickFacebookFromSignInPage();
+		abercrombie().facebookOption().moveToFacebookPage();
+		abercrombie().facebookOption().pressTab();
 	}
+
 }

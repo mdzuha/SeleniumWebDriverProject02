@@ -37,16 +37,12 @@ public class ControllerBase {
 		this.driver = driver;
 		
 	}
-	public void windowHandle(){
-		String parentHandle = driver.getWindowHandle(); // get the current window handle
-//		driver.findElement(By.xpath("//*[@id='someXpath']")).click(); // click some link that opens a new window
-		for (String winHandle : driver.getWindowHandles()) {
-		    driver.switchTo().window(winHandle); // switch focus of WebDriver to the next found window handle (that's your newly opened window)
-		    driver.switchTo().window(parentHandle); // switch back to the original window
+	public void checkCheckBox(WebElement element){
+		if(!element.isSelected()){
+			click(element);
 		}
-
-		//code to do something on new window
 	}
+	
 	public String switchWindowByTitle(String titleExpected){
 		String titleToMatch = titleExpected.trim().toUpperCase();
 		String currentWindow = driver.getWindowHandle();
@@ -58,6 +54,7 @@ public class ControllerBase {
 				String titleActual = driver.getTitle().trim().toUpperCase();
 				System.out.println(titleActual);
 				if(titleActual.contains(titleToMatch)){
+					driver.manage().window().maximize();
 					break;
 				}
 				
@@ -65,9 +62,11 @@ public class ControllerBase {
 		}
 		return currentWindow;
 	}
+	
 	public void enter(WebElement element){
 		element.sendKeys(Keys.ENTER);
 	}
+	
 	public void tabSwitch(String text, String testText, WebElement firstElement, WebElement secondElement){
 		firstElement.sendKeys(text);
 		firstElement.sendKeys(Keys.TAB);
@@ -78,6 +77,7 @@ public class ControllerBase {
 		
 		
 	}
+	
 	public void matrixTyping(long intToBeTyped, WebElement element){
 		int length = String.valueOf(intToBeTyped).length();
 		for(int i = 0; i<length; i++){
@@ -86,6 +86,7 @@ public class ControllerBase {
 			element.sendKeys(charSeq);
 		}
 	}
+	
 	public void matrixTyping(String stringToBeTyped, WebElement element){
 		element.clear();
 		int length = stringToBeTyped.length();
@@ -95,17 +96,20 @@ public class ControllerBase {
 			element.sendKeys(charSeq);
 		}
 	}
+	
 	public void scrollDown() throws AWTException{
 		Robot robot = new Robot();
 		robot.keyPress(KeyEvent.VK_PAGE_DOWN);
 		delayFor(10000);
 		robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
 	}
+	
 	public void scrollDownJS(){
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("window.scrollBy(0,2500)", "");//scroll down for 2500 pixel
 		//jse.executeScript("scroll(0, 250);");
 	}
+	
 	public void scrollUpJS(){
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("window.scrollBy(0,-250)", "");

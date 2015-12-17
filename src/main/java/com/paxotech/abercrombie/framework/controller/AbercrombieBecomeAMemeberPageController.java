@@ -12,11 +12,11 @@ import com.paxotech.abercrombie.framework.model.AbercrombieBecomeAMemeberModel;
  * @author PaxoTech Student
  *
  */
-public class AbercrombieBecomeAMemeberController extends ControllerBase{
+public class AbercrombieBecomeAMemeberPageController extends ControllerBase{
 	
 	private AbercrombieBecomeAMemeberModel becomeAMemeber;
 	
-	public AbercrombieBecomeAMemeberController(WebDriver driver) {
+	public AbercrombieBecomeAMemeberPageController(WebDriver driver) {
 		super(driver);
 		becomeAMemeber = new AbercrombieBecomeAMemeberModel(driver);
 	}
@@ -46,7 +46,7 @@ public class AbercrombieBecomeAMemeberController extends ControllerBase{
 	public void becomeAMemeberEnter(){
 		becomeAMemeber.becomeAMemberButton().sendKeys(Keys.ENTER);;
 	}
-	public void facebook(){
+	public void clickFacebookFromBEcomeAMemberPage(){
 		becomeAMemeber.facebook().click();
 	}
 	public void phoneNoTooltipHover(){
@@ -55,6 +55,7 @@ public class AbercrombieBecomeAMemeberController extends ControllerBase{
 	public void facebookTooltipHover(){
 		this.hoverItem(becomeAMemeber.facebookTooltip());
 	}
+	
 	
 
 	

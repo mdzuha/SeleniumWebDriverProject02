@@ -29,6 +29,13 @@ public class ClearDir {
 	         new ClearDir();
 			ClearDir.deleteFile(FILE_DIR2, FILE_TEXT_EXT2);
 	   }
+	   private static final String FILE_DIR3 = System.getProperty("user.dir")+"/log/";
+	   private static final String FILE_TEXT_EXT3 = ".log";
+
+	   public static void runLog() {
+	         new ClearDir();
+			ClearDir.deleteFile(FILE_DIR3, FILE_TEXT_EXT3);
+	   }
 	   
 	   
 	   public static void deleteFile(String folder, String ext){

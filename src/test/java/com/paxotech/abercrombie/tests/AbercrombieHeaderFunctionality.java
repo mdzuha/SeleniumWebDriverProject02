@@ -32,13 +32,13 @@ public class AbercrombieHeaderFunctionality extends ScriptBase{
 		log.info("Advertisement CLosed");
 	}
 	
-	@Test(dependsOnMethods="closeAdvertisement")
+	@Test(dependsOnMethods= {"closeAdvertisement"})
 	public void logoLinkFunctionality(){
 		abercrombie().pageHeader().logoLink();
 		RenameFile.toBeRenamed.add("TestVideos/PH_LogoLinkFunctionality "+dateFormat.format(new Date())+".avi");
 		log.info("Click Abercrombie Logo");
 	}
-	@Test(dependsOnMethods="closeAdvertisement")
+	@Test(dependsOnMethods= {"closeAdvertisement"})
 	public void mensPageLinkFunctionality(){
 		abercrombie().pageHeader().mensPageLink();
 		RenameFile.toBeRenamed.add("TestVideos/PH_MensPageLinkFunctionality "+dateFormat.format(new Date())+".avi");

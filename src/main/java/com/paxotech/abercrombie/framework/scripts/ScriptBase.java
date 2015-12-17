@@ -76,6 +76,7 @@ public class ScriptBase {
 //
 //		ClearDir.runPng();
 //		ClearDir.runAvi();
+//		ClearDir.runLog();
 //	}
 
 
@@ -84,6 +85,7 @@ public class ScriptBase {
 	@Parameters({ "browser" })
 	@BeforeMethod
 	public void setUp(@Optional("ff") String browser) throws Exception {
+		
 		DOMConfigurator.configure("log4j.xml");
 			log.info("**********New Test Started**********");
 		this.startRecording("AbercrombieTest");

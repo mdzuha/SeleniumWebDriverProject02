@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="AbercrombieTests" verbose="1" parallel="tests" thread-count="5">
-	<parameter name="browser" value="ch"/>
+<suite name="AbercrombieTests" >
+	<!--<parameter name="browser" value="ch"/>
 	<test name="Abercrombie Header">
 		
 		<classes>
@@ -15,9 +15,20 @@
 			<class name="com.paxotech.abercrombie.tests.AbercrombieFooterFunctionality" />
 		</classes>
 	</test>
-	<!--<test name="SampleTest"> <parameter name="browser" value="ff"></parameter> 
+	<test name="SampleTest"> <parameter name="browser" value="ff"></parameter> 
 		<classes> <class name="com.paxotech.abercrombie.tests.SampleTest"/> </classes> 
 		</test> -->
+	<test name="Abercrombie">
+		<groups>
+		    <run>
+		      <include name="uitestcase"/>
+		    </run>
+	  	</groups>
+	  	<classes>
+	  		<!--<class name="com.paxotech.abercrombie.tests.AbercrombieSignInPageTabFunctionality"/>-->
+	  		  <class name="com.paxotech.abercrombie.tests.AbercrombieFacebookLoginOptionPageTab"/>
+	  	</classes>
+	</test>
 
 
 </suite>

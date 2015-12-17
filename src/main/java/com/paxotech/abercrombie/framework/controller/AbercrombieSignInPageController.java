@@ -23,7 +23,7 @@ public class AbercrombieSignInPageController extends ControllerBase{
 		this.matrixTyping(email, signIn.emailTextBox());
 		this.matrixTyping(password, signIn.passwordTextBox());
 	}
-	public void clickFacebook(){
+	public void clickFacebookFromSignInPage(){
 		this.click(signIn.facebookLink());
 	}
 	public void clickContinue(){
@@ -32,6 +32,7 @@ public class AbercrombieSignInPageController extends ControllerBase{
 	public void tabPress(){
 		this.tabSwitch("TEST", "TESTTEXT", signIn.emailTextBox(), signIn.passwordTextBox());
 	}
+
 	
 
 }
