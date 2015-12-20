@@ -71,13 +71,13 @@ public class ScriptBase {
 	
 	/*----------------------------------------------*/
 	
-//	@BeforeSuite
-//	public void startSuit(){
-//
-//		ClearDir.runPng();
-//		ClearDir.runAvi();
-//		ClearDir.runLog();
-//	}
+	@BeforeSuite
+	public void startSuit(){
+
+		ClearDir.runPng();
+		ClearDir.runAvi();
+		ClearDir.runLog();
+	}
 
 
 	/*----------------------------------------------*/
@@ -161,8 +161,8 @@ public class ScriptBase {
 			this.captureScreen(desiredName);
 
 		}
-//		driver.close();
-//		driver.quit();
+		driver.close();
+		driver.quit();
 		log.info("Browser Closed");
 		this.stopRecording();
 
@@ -172,10 +172,10 @@ public class ScriptBase {
 	/*----------------------------------------------*/
 
 	
-//	@AfterSuite
-//	public void endSuit(){
-//		RenameFile.run();
-//	}
+	@AfterSuite
+	public void endSuit(){
+		RenameFile.run();
+	}
 	
 	/*----------------------------------------------*/
 	

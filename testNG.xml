@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="AbercrombieTests" >
-	<!--<parameter name="browser" value="ch"/>
+	<!--<parameter name="browser" value="ch"/>-->
 	<test name="Abercrombie Header">
 		
 		<classes>
@@ -15,19 +15,24 @@
 			<class name="com.paxotech.abercrombie.tests.AbercrombieFooterFunctionality" />
 		</classes>
 	</test>
-	<test name="SampleTest"> <parameter name="browser" value="ff"></parameter> 
-		<classes> <class name="com.paxotech.abercrombie.tests.SampleTest"/> </classes> 
-		</test> -->
-	<test name="Abercrombie">
-		<groups>
-		    <run>
-		      <include name="uitestcase"/>
-		    </run>
-	  	</groups>
-	  	<classes>
-	  		<!--<class name="com.paxotech.abercrombie.tests.AbercrombieSignInPageTabFunctionality"/>-->
-	  		  <class name="com.paxotech.abercrombie.tests.AbercrombieFacebookLoginOptionPageTab"/>
-	  	</classes>
+	<test name="AbercrombieBecomeAMember"> 
+		<classes> 
+			<class name="com.paxotech.abercrombie.tests.AbercrombieBecomeAMemberTabFunctionality"/> 
+		</classes> 
+	</test>
+	<test name="AbercrombieFacebookPage">
+		<classes>
+			<class name="com.paxotech.abercrombie.tests.AbercrombieFacebookLoginOptionPageFunctionality"/>
+			<class name="com.paxotech.abercrombie.tests.AbercrombieFacebookLoginOptionPageTab"/>
+		</classes>
+		
+	</test>
+	<test name="AbercrombieSigninPage">
+		<classes>
+			<class name="com.paxotech.abercrombie.tests.AbercrombieSignInPageFunctionality"/>
+			<class name="com.paxotech.abercrombie.tests.AbercrombieSignInPageTabFunctionality"/>
+		</classes>
+		
 	</test>
 
 

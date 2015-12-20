@@ -25,7 +25,7 @@ private static Logger log = Logger.getLogger(AbercrombieFooterFunctionality.clas
 		DOMConfigurator.configure("log4j.xml");
 		abercrombie().advertisement().clickCloseAdd();
 		RenameFile.toBeRenamed.add("TestVideos/PF_CloseAdvertisement "+dateFormat.format(new Date())+".avi");
-		log.info("Advertisement CLosed");
+		log.info("Advertisement Closed");
 	}
 
 	@Test(dependsOnMethods="closeAdvertisement")

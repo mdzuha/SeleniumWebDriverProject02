@@ -46,7 +46,7 @@ public class AbercrombieBecomeAMemeberPageController extends ControllerBase{
 	public void becomeAMemeberEnter(){
 		becomeAMemeber.becomeAMemberButton().sendKeys(Keys.ENTER);;
 	}
-	public void clickFacebookFromBEcomeAMemberPage(){
+	public void clickFacebookFromBecomeAMemberPage(){
 		becomeAMemeber.facebook().click();
 	}
 	public void phoneNoTooltipHover(){
