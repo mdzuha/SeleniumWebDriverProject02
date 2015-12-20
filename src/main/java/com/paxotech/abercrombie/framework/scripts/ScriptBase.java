@@ -71,13 +71,13 @@ public class ScriptBase {
 	
 	/*----------------------------------------------*/
 	
-	@BeforeSuite
-	public void startSuit(){
-
-		ClearDir.runPng();
-		ClearDir.runAvi();
-		ClearDir.runLog();
-	}
+//	@BeforeSuite
+//	public void startSuit(){
+//
+//		ClearDir.runPng();
+//		ClearDir.runAvi();
+//		ClearDir.runLog();
+//	}
 
 
 	/*----------------------------------------------*/
@@ -172,10 +172,10 @@ public class ScriptBase {
 	/*----------------------------------------------*/
 
 	
-	@AfterSuite
-	public void endSuit(){
-		RenameFile.run();
-	}
+//	@AfterSuite
+//	public void end(){
+//		RenameFile.run();
+//	}
 	
 	/*----------------------------------------------*/
 	
