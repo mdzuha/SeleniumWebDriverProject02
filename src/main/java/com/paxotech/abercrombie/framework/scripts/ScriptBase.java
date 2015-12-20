@@ -172,10 +172,10 @@ public class ScriptBase {
 	/*----------------------------------------------*/
 
 	
-//	@AfterSuite
-//	public void end(){
-//		RenameFile.run();
-//	}
+	@AfterSuite
+	public void end(){
+		RenameFile.run();
+	}
 	
 	/*----------------------------------------------*/
 	
