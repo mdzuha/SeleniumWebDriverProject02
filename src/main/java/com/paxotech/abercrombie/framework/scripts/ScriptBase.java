@@ -71,13 +71,13 @@ public class ScriptBase {
 	
 	/*----------------------------------------------*/
 	
-//	@BeforeSuite
-//	public void startSuit(){
-//
-//		ClearDir.runPng();
-//		ClearDir.runAvi();
-//		ClearDir.runLog();
-//	}
+	@BeforeSuite
+	public void startSuit(){
+
+		ClearDir.runPng();
+		ClearDir.runAvi();
+		ClearDir.runLog();
+	}
 
 
 	/*----------------------------------------------*/
