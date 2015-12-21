@@ -106,7 +106,7 @@ public class ControllerBase {
 	
 	public void scrollDownJS(){
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
-		jse.executeScript("window.scrollBy(0,2500)", "");//scroll down for 2500 pixel
+		jse.executeScript("window.scrollBy(0,2000)", "");//scroll down for 2500 pixel
 		//jse.executeScript("scroll(0, 250);");
 	}
 	

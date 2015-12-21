@@ -4,11 +4,12 @@
 <suite name="AbercrombieTests" >
 	<!--<parameter name="browser" value="ch"/>-->
 	<test name="Abercrombie Header">
+	
 		
 		<classes>
 			<class name="com.paxotech.abercrombie.tests.AbercrombieHeaderFunctionality" />
 		</classes>
-	</test>
+	  </test>
 	<test name="Abercrombie Footer">
 		
 		<classes>

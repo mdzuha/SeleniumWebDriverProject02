@@ -24,7 +24,6 @@ public class AbercrombieHeaderFunctionality extends ScriptBase{
 	private static Logger log = Logger.getLogger(AbercrombieHeaderFunctionality.class.getName());
 	
 	@Test(alwaysRun=true)
-	
 	public void closeAdvertisement(){
 		DOMConfigurator.configure("log4j.xml");
 		abercrombie().advertisement().clickCloseAdd();

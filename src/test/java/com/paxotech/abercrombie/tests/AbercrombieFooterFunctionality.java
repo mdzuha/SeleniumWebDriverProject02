@@ -20,7 +20,7 @@ public class AbercrombieFooterFunctionality extends ScriptBase{
 	
 private static Logger log = Logger.getLogger(AbercrombieFooterFunctionality.class.getName());
 	
-	@Test(alwaysRun=true)
+	@Test(alwaysRun=true, groups={"functest"})
 	public void closeAdvertisement(){
 		DOMConfigurator.configure("log4j.xml");
 		abercrombie().advertisement().clickCloseAdd();

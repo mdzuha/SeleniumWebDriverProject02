@@ -25,6 +25,7 @@ public class AbercrombieApplication{
 	private AbercrombieBecomeAMemeberPageController becomeAMember;
 	private AbercrombieSignInPageController signIn;
 	private AbercrombieFacebookLoginOptionPageController facebookOption;
+	private AbercrombieHomePageController homePage;
 	
 	public AbercrombieAdvertisementPageController advertisement(){
 		if(advertisement == null){
@@ -61,6 +62,12 @@ public class AbercrombieApplication{
 			facebookOption = new AbercrombieFacebookLoginOptionPageController(driver);
 		}
 		return facebookOption;
+	}
+	public AbercrombieHomePageController homePage(){
+		if(homePage == null){
+			homePage = new AbercrombieHomePageController(driver);
+		}
+		return homePage;
 	}
 	
 
