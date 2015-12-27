@@ -75,7 +75,7 @@ public class AbercrombiePageFooterController extends ControllerBase{
 		this.verifyPage("Abercrombie & Fitch | Authentic American clothing since 1892");
 	}
 	public void upArrow(){
-		this.scrollDownJS();
+		this.scrollDownJS(2500);
 		this.click(pageFooter.upArrow());
 	}
 	

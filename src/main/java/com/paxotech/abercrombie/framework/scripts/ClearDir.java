@@ -21,6 +21,7 @@ public class ClearDir {
 	         new ClearDir();
 			ClearDir.deleteFile(FILE_DIR, FILE_TEXT_EXT);
 	   }
+	   
 
 	   private static final String FILE_DIR2 = System.getProperty("user.dir")+"/TestVideos/";
 	   private static final String FILE_TEXT_EXT2 = ".avi";
@@ -35,6 +36,13 @@ public class ClearDir {
 	   public static void runLog() {
 	         new ClearDir();
 			ClearDir.deleteFile(FILE_DIR3, FILE_TEXT_EXT3);
+	   }
+	   private static final String FILE_DIR4 = System.getProperty("user.dir");
+	   private static final String FILE_TEXT_EXT4 = ".zip";
+
+	   public static void runZip() {
+	         new ClearDir();
+			ClearDir.deleteFile(FILE_DIR4, FILE_TEXT_EXT4);
 	   }
 	   
 	   

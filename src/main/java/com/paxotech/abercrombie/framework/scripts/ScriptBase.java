@@ -5,6 +5,7 @@ package com.paxotech.abercrombie.framework.scripts;
 
 import java.awt.AWTException;
 
+
 import java.awt.Dimension;
 import java.awt.Rectangle;
 import java.awt.Robot;
@@ -30,6 +31,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -43,10 +45,15 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
+import org.zeroturnaround.zip.ZipUtil;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.output.ByteArrayOutputStream;
 import org.apache.log4j.Logger;
 import com.paxotech.abercrombie.framework.controller.AbercrombieApplication;
+
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 
 
 
@@ -60,24 +67,57 @@ import com.paxotech.abercrombie.framework.controller.AbercrombieApplication;
 public class ScriptBase {
 	
 	protected WebDriver driver;
-	protected SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd hh.mm.ss");
 	protected AbercrombieApplication abercrombie;
+	
 	private static Logger log = Logger.getLogger(ScriptBase.class.getName());
+
+//	*********************For recording of tests*****************************************	
 	
 	private ScreenRecorder screenRecorder;
+	protected SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd hh.mm.ss");
 	private File file = new File(System.getProperty("user.dir") + "/TestVideos/");
 
+
+//	**********************For Extent Reporting Of test case*******************************
+	
+	String filePathHeader = System.getProperty("user.dir")+"/test-output/extent-report/report-header.html";
+	protected ExtentReports reportHeader = new ExtentReports(filePathHeader, true);
+	String filePathFooter = System.getProperty("user.dir")+"/test-output/extent-report/report-footer.html";
+	protected ExtentReports reportFooter = new ExtentReports(filePathFooter, true);
+	String filePathBecomeAMemberTab = System.getProperty("user.dir")+"/test-output/extent-report/report-becomeAmemberTab.html";
+	protected ExtentReports reportBecomeAMemberTab = new ExtentReports(filePathBecomeAMemberTab, true);
+	String filePathSignInFunc = System.getProperty("user.dir")+"/test-output/extent-report/report-signinFunc.html";
+	protected ExtentReports reportSignInFunc = new ExtentReports(filePathSignInFunc, true);
+	String filePathSignInTab = System.getProperty("user.dir")+"/test-output/extent-report/report-signinTab.html";
+	protected ExtentReports reportSignInTab = new ExtentReports(filePathSignInTab, true);
+	String filePathMens = System.getProperty("user.dir")+"/test-output/extent-report/report-mens.html";
+	protected ExtentReports reportMens = new ExtentReports(filePathMens, true);
+	String filePathKids = System.getProperty("user.dir")+"/test-output/extent-report/report-kids.html";
+	protected ExtentReports reportKids = new ExtentReports(filePathKids, true);
+	String filePathSale = System.getProperty("user.dir")+"/test-output/extent-report/report-sale.html";
+	protected ExtentReports reportSale = new ExtentReports(filePathSale, true);
+	String filePathFacebookFunc = System.getProperty("user.dir")+"/test-output/extent-report/report-facebookFunc.html";
+	protected ExtentReports reportFacebookFunc = new ExtentReports(filePathFacebookFunc, true);
+	String filePathFacebookTab = System.getProperty("user.dir")+"/test-output/extent-report/report-facebookTab.html";
+	protected ExtentReports reportFacebookTab = new ExtentReports(filePathFacebookTab, true);
+	String filePathHome = System.getProperty("user.dir")+"/test-output/extent-report/report-home.html";
+	protected ExtentReports reportHome = new ExtentReports(filePathHome, true);
+	String filePathChkOut = System.getProperty("user.dir")+"/test-output/extent-report/report-chkout.html";
+	protected ExtentReports reportChkOut = new ExtentReports(filePathChkOut, true);
+	protected ExtentTest test;
+	
 	
 	
 	/*----------------------------------------------*/
 	
-//	@BeforeSuite
-//	public void startSuit(){
-//
-//		ClearDir.runPng();
-//		ClearDir.runAvi();
-//		ClearDir.runLog();
-//	}
+	@BeforeSuite
+	public void startSuit(){
+
+		ClearDir.runPng();
+		ClearDir.runAvi();
+		ClearDir.runLog();
+		ClearDir.runZip();
+	}
 
 
 	/*----------------------------------------------*/
@@ -87,7 +127,8 @@ public class ScriptBase {
 	public void setUp(@Optional("ff") String browser) throws Exception {
 		
 		DOMConfigurator.configure("log4j.xml");
-			log.info("**********New Test Started**********");
+
+		log.info("**********New Test Started**********");
 		this.startRecording("AbercrombieTest");
 		if (browser.contentEquals("ff")) {
 			driver = new FirefoxDriver();
@@ -132,6 +173,7 @@ public class ScriptBase {
 			log.info("Remote Chrome Driver Initiated");
 		}
 		
+		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		log.info("Implicit Wait 30 Seconds Used");
 		driver.manage().timeouts().setScriptTimeout(30, TimeUnit.SECONDS);
@@ -172,10 +214,14 @@ public class ScriptBase {
 	/*----------------------------------------------*/
 
 	
-//	@AfterSuite
-//	public void end(){
-//		RenameFile.run();
-//	}
+	@AfterSuite
+	public void end() throws Exception{
+		RenameFile.run();
+		ZipUtil.pack(new File("C:/JavaDevelopmentEclipse/SeleniumWebDriverProject02/test-output/extent-report"), new File("C:/JavaDevelopmentEclipse/SeleniumWebDriverProject02/extent-report.zip"));
+
+	}
+
+	
 	
 	/*----------------------------------------------*/
 	

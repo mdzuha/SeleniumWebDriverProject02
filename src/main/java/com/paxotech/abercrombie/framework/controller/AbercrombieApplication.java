@@ -26,6 +26,8 @@ public class AbercrombieApplication{
 	private AbercrombieSignInPageController signIn;
 	private AbercrombieFacebookLoginOptionPageController facebookOption;
 	private AbercrombieHomePageController homePage;
+	private AbercrombieMensPageController mensPage;
+	private AbercrombieKidsPageController kidsPage;
 	
 	public AbercrombieAdvertisementPageController advertisement(){
 		if(advertisement == null){
@@ -68,6 +70,18 @@ public class AbercrombieApplication{
 			homePage = new AbercrombieHomePageController(driver);
 		}
 		return homePage;
+	}
+	public AbercrombieMensPageController mensPage(){
+		if(mensPage == null){
+			mensPage = new AbercrombieMensPageController(driver);
+		}
+		return mensPage;
+	}
+	public AbercrombieKidsPageController kidsPage(){
+		if(kidsPage == null){
+			kidsPage = new AbercrombieKidsPageController(driver);
+		}
+		return kidsPage;
 	}
 	
 

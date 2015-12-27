@@ -33,7 +33,7 @@ public class AbercrombieFacebookLoginOptionPageTab extends ScriptBase{
 		log.info("Moved to Facebook Page");
 		abercrombie().facebookOption().pressTab();
 		RenameFile.toBeRenamed.add("TestVideos/FB_FacebookTabFunctionality "+dateFormat.format(new Date())+".avi");
-		log.info("Pressing teh Tab");
+		log.info("Pressing the Tab");
 	}
 
 }

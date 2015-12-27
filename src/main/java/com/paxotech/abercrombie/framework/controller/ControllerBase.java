@@ -19,6 +19,7 @@ import static org.hamcrest.Matchers.*;
 
 import java.awt.AWTException;
 import java.awt.Robot;
+import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.net.URL;
 import java.util.Set;
@@ -36,6 +37,40 @@ public class ControllerBase {
 	public ControllerBase(WebDriver driver){
 		this.driver = driver;
 		
+	}
+	private void leftClick() throws AWTException{
+		Robot robot = new Robot();
+		robot.mousePress(InputEvent.BUTTON1_MASK);
+	    robot.delay(200);
+	    robot.mouseRelease(InputEvent.BUTTON1_MASK);
+	    robot.delay(200);
+	}
+	private void rightClick() throws AWTException{
+		Robot robot = new Robot();
+		robot.mousePress(InputEvent.BUTTON3_MASK);
+	    robot.delay(200);
+	    robot.mouseRelease(InputEvent.BUTTON3_MASK);
+	    robot.delay(200);
+	}
+	private void type(String s) throws AWTException{
+		Robot robot = new Robot();
+	    byte[] bytes = s.getBytes();
+	    for (byte b : bytes){
+	      int code = b;
+	      // keycode only handles [A-Z] (which is ASCII decimal [65-90])
+	      if (code > 96 && code < 123) code = code - 32;
+	      robot.delay(40);
+	      robot.keyPress(code);
+	      robot.keyRelease(code);
+	    }
+	 }
+	public void imageLoaded(WebElement element){
+		Boolean imagePresent = (Boolean) ((JavascriptExecutor)driver).executeScript("return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0", element);
+		if (!imagePresent) {
+			System.out.println("Image not displayed.");
+		  } else {
+			System.out.println("Image displayed.");
+		}
 	}
 	public void checkCheckBox(WebElement element){
 		if(!element.isSelected()){
@@ -104,9 +139,9 @@ public class ControllerBase {
 		robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
 	}
 	
-	public void scrollDownJS(){
+	public void scrollDownJS(int distance){
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
-		jse.executeScript("window.scrollBy(0,2000)", "");//scroll down for 2500 pixel
+		jse.executeScript("window.scrollBy(0,"+distance+")", "");//scroll down for 2500 pixel
 		//jse.executeScript("scroll(0, 250);");
 	}
 	
@@ -137,6 +172,11 @@ public class ControllerBase {
 	}
 	public void click(WebElement element){
 		element.click();
+	}
+	public void conditionalClick(WebElement element){
+		if(!element.isSelected()){
+			element.click();
+		}
 	}
 	public void verifyPage(String title){
 		String expectedTitle = title.trim().toUpperCase();

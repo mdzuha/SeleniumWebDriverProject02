@@ -3,14 +3,18 @@
 
 <suite name="AbercrombieTests" >
 	<!--<parameter name="browser" value="ch"/>-->
+	<listeners>
+        <listener class-name="com.paxotech.abercrombie.listenner.ExtentReporterNG" />
+    </listeners>
 	<test name="Abercrombie Header">
-	
-		
 		<classes>
-			<class name="com.paxotech.abercrombie.tests.AbercrombieHeaderFunctionality" />
+			<class name="com.paxotech.abercrombie.tests.AbercrombieSignInPageTabFunctionality"/>
 		</classes>
-	  </test>
-	<test name="Abercrombie Footer">
+	</test>
+	<!--  	<class name="com.paxotech.abercrombie.tests.AbercrombieHeaderFunctionality" />
+		</classes>
+	</test>
+	  <test name="Abercrombie Footer">
 		
 		<classes>
 			<class name="com.paxotech.abercrombie.tests.AbercrombieFooterFunctionality" />
@@ -34,7 +38,7 @@
 			<class name="com.paxotech.abercrombie.tests.AbercrombieSignInPageTabFunctionality"/>
 		</classes>
 		
-	</test>
+	</test>-->
 
 
 </suite>
