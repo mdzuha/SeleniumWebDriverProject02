@@ -3,15 +3,23 @@
  */
 package com.paxotech.abercrombie.framework.controller;
 
+
 import java.util.Arrays;
+
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WebDriver;
+
 
 import com.paxotech.abercrombie.framework.model.AbercrombieHomePageModel;
 
 /**
+<<<<<<< HEAD
  * @author Masihur
+=======
+ * @author masihur
+>>>>>>> Sorry
  *
  */
 public class AbercrombieHomePageController extends ControllerBase{
@@ -21,6 +29,7 @@ public class AbercrombieHomePageController extends ControllerBase{
 		super(driver);
 		homePage = new AbercrombieHomePageModel(driver);
 	}
+
 	public void clickLimitEdition(){
 		this.click(homePage.limitedEdition());
 	}
@@ -81,6 +90,12 @@ public class AbercrombieHomePageController extends ControllerBase{
 	}
 	public void clickShopHomePageWomenHoody(){
 		this.click(homePage.shioHomePageWomenHoody());
+	}
+	public void hoverLimitedEdition(){
+		this.hoverItem(homePage.limitedEdition());
+	}
+	public void clickShopNow(){
+		this.click(homePage.shopMens());
 	}
 
 }
