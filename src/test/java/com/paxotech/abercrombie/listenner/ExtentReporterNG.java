@@ -54,6 +54,11 @@ public class ExtentReporterNG implements IReporter {
 
                 if (result.getThrowable() != null)
                     message = result.getThrowable().getMessage();
+                
+                System.out.println(result.getStatus());
+                
+                if(result.getStatus() == 0)
+                	test.addScreenCapture("C:/Users/Masihur/Pictures/flower.jpg");
                 test.assignAuthor("Masihur");
                 test.log(status, "Result of test "+"'"+testName+"'", message);
 
